@@ -11,11 +11,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        viewPager.adapter = DemoCollectionAdapter(this)
-//        TabLayoutMediator(tabLayout, viewPager) {
-//            tab, position ->
-//            tab.text = "OBJECT ${(position + 1)}"
-//        }
-
+        viewPager.adapter = MyFragmentStateAdapter(this)
+        TabLayoutMediator(tabLayout, viewPager) {
+            tab, position ->
+            tab.text = "TAB ${(position + 1)}"
+        }.attach()
     }
 }
