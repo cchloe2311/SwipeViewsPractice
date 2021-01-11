@@ -12,9 +12,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewPager.adapter = MyFragmentStateAdapter(this)
-        TabLayoutMediator(tabLayout, viewPager) {
+
+        // TabLayourMediator를 이용해 ViewPager2와 TabLayout 연결
+       TabLayoutMediator(tabLayout, viewPager) {
             tab, position ->
+           // TabConfigurationStrategy 구현 (탭 레이아웃의 탭 아이템들의 스타일과 텍스트를 설정)
             tab.text = "TAB ${(position + 1)}"
-        }.attach()
+        }.attach() // attach() 메소드를 호출해 연결!
     }
 }
