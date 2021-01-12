@@ -25,6 +25,7 @@ class MyFragmentStateAdapter(fragmentActivity: FragmentActivity) : FragmentState
         val fragment = MyFragment()
         fragment.arguments = Bundle().apply {
             putInt(FRAGMENT_POSITION_KEY, position + 1)
+            putBoolean(IS_SHOW_KEY, position == 0)
         }
         return fragment
     }
